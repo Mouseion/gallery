@@ -1,5 +1,5 @@
 import socket
-import os
+import os.path
 # Django settings for win project.
 if socket.gethostname()== "DreamMachine":
 	DEBUG = True
@@ -112,6 +112,7 @@ ROOT_URLCONF = 'win.urls'
 WSGI_APPLICATION = 'win.wsgi.application'
 
 TEMPLATE_DIRS = (
+	os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -129,6 +130,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
     'south',
+    'iup',
 )
 
 # A sample logging configuration. The only tangible logging
