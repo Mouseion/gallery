@@ -9,5 +9,5 @@ def main(request):
 	if request.method == "POST":
 		form = Upload(request.POST, request.FILES)
 		if form.is_valid():
-			return HttpResponse("SUCCESS NIGGA!")
+			return HttpResponse("SUCCESS!")
 	return render(request, "upload.html", {"form": form})
